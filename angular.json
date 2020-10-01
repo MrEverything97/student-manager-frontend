@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "student-manager-frontend"
+    }
+  },
+  "defaultProject": "student-manager-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
