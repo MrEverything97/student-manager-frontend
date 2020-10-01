@@ -3,14 +3,14 @@
     <h2>Student List</h2>
   </div>
   <button class="btn btn-primary" [routerLink]="['/student/create']">Add new Student</button>
-  <div class="top-search-area">
-<!--    <form action="index.html" method="post">-->
-<!--      <input type="search" name="top-search-bar" class="form-control" placeholder="Search Price" [(ngModel)]="keyword"-->
-<!--             (ngModelChange)="search()">-->
-<!--      <button type="submit" (click)="search()"><i class="fa fa-search" aria-hidden="true">Search</i></button>-->
-<!--    </form>-->
+  <div class="top-search-area ">
+    <form action="" method="post">
+      <input type="search" name="top-search-bar" class="form-control" style="width: 310px" placeholder="Search by Name" [(ngModel)]="keyword"
+             (ngModelChange)="search()">
+      <button type="submit" (click)="search()"><i class="fa fa-search" aria-hidden="true">Search</i></button>
+    </form>
   </div>
-  <table class="table table-bordered">
+  <table class="table table-bordered text-center">
     <thead class="thead-light">
     <tr>
       <th scope="col">#</th>

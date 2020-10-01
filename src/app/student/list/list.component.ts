@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Student} from '../../interface/student';
 import {StudentServiceService} from '../../service/student-service.service';
 import Swal from 'sweetalert2';
+import {SearchService} from '../../service/search.service';
 
 @Component({
   selector: 'app-list',
@@ -13,8 +14,10 @@ export class ListComponent implements OnInit {
   failMessage: string;
   successMessage: string;
   Toast: any;
+  keyword: any;
 
-  constructor(private studentService: StudentServiceService) {
+  constructor(private studentService: StudentServiceService,
+              private searchService: SearchService) {
   }
 
   ngOnInit(): void {
@@ -55,5 +58,18 @@ export class ListComponent implements OnInit {
         Swal.fire('Not delete this student', '', 'info');
       }
     });
+  }
+  search(){
+    if (this.keyword !== ''){
+      this.studentService.getStudentByName(this.keyword).subscribe( data => {
+        this.studentList = data;
+        this.searchService.changeValue(this.keyword, this.studentList);
+      });
+    }else {
+      this.studentService.showStudentList().subscribe( data => {
+        this.studentList = data;
+        this.searchService.changeValue(this.keyword, this.studentList);
+      });
+    }
   }
 }

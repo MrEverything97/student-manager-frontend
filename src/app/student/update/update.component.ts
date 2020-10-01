@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {StudentServiceService} from '../../service/student-service.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Student} from '../../interface/student';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update',
