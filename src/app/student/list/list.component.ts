@@ -22,22 +22,14 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.studentService.showStudentList()
-      .subscribe(result => {
+      .subscribe((result) => {
         this.studentList = result;
+        console.log(this.studentList);
       }, error => {
         this.failMessage = 'Show Student List Fail';
       });
   }
 
-  // deleteStudent(id: number) {
-  //   this.deleteSuccess();
-  //   this.studentService.deleteStudentById(id).subscribe(() => {
-  //     this.successMessage = 'delete success';
-  //     this.ngOnInit();
-  //   }, error => {
-  //     this.failMessage = 'delete Fail';
-  //   });
-  // }
 
   deleteStudent(id: number) {
     this.Toast = Swal.fire({

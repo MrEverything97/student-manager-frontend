@@ -23,6 +23,9 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
     this.studentCreateForm = new FormGroup(
       {
+        id : new FormControl('',
+          [Validators.required,
+            Validators.minLength(1)]),
         name: new FormControl('',
           [Validators.required,
             Validators.minLength(2)]),
@@ -53,6 +56,7 @@ export class CreateComponent implements OnInit {
           this.studentService.createStudent(value)
             .subscribe(result => {
               this.studentList.push(result);
+              console.log(result);
               this.router.navigate(['student/list']);
               // this.createSuccess();
             });

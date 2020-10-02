@@ -3,6 +3,17 @@
   <form [formGroup]="studentCreateForm" (ngSubmit)="onSubmit()">
     <div>
       <label>
+        ID:
+        <br>
+        <input type="text" formControlName="id">
+      </label>
+    </div>
+    <div *ngIf="studentCreateForm.get('id').invalid && studentCreateForm.get('id').touched"
+         style="color: #ff0000">
+      Id is required and min length is 1
+    </div>
+    <div>
+      <label>
         Name:
         <br>
         <input type="text" formControlName="name">
