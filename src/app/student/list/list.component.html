@@ -26,7 +26,7 @@
       <th scope="row">{{st.id}}</th>
       <td>{{st.name}}</td>
       <td>{{st.studentCode}}</td>
-      <td>{{st.dateOfBirth}}</td>
+      <td>{{st.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
       <td>{{st.phoneNumber}}</td>
       <td>
       <span class="table-remove"><button type="button" class="btn btn-warning btn-rounded btn-sm my-0"
